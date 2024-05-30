@@ -1,7 +1,7 @@
 /* All style */
 .App{
   font-size: larger;
-  font-family: AppleSDGothicNeoB00;
+  font-family: AppleSDGothicNeoB00, serif;
 
 }
 /* A Tag style */
@@ -38,8 +38,7 @@ ul, li{
   display: flex;
   list-style: none;
   margin: 0;
-  padding: 0;
-  padding-right: 30px;
+  padding: 0 30px 0 0;
 }
 
 /*main views*/
@@ -51,39 +50,78 @@ main{
 }
 /* Main All type */
 .container{
-  display: flex;
   flex-direction: column;
-  height: 100vh;
   background-color: #fff;
-  margin-top: 50px;
+  margin-top: 20px;
+  margin-bottom: 15px;
+  position: relative;
+  /*height: 85vh;*/
 }
 
-.main-contianer{
+.main-container{
   flex: 1;
   display: flex;
-  justify-content: center;
   align-items: center;
   margin: 35px;
   justify-content: space-evenly;
 }
 /*game-room views*/
 .game-room{
+  display: grid;
 }
 table{
-
+  border-collapse: collapse;
 }
-thead th {
+thead {
   border-bottom: 2px solid;
   border-top: 2px solid;
   font-size: 22px;
 }
 tbody{
 }
+th{
+  text-align: center;
+}
+th .btn{
+  padding: 1px 30px 1px 30px;
+}
 
+.game-room-create{
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+
+}
+
+.game-room-create-btn{
+  padding: 10px 15px;
+  margin: 20px 20px 10px;
+
+}
+
+/*playGame*/
+.play-game-room{
+  height: 700px;
+  border: 3px solid;
+}
+.chat-row{
+  /*height: 100%;*/
+  margin-right: 5px;
+}
+.user-info-row{
+  /*height: 520px;*/
+  /*margin-bottom: 120px;*/
+
+}
+.play-game-out-row{
+
+}
 
 
 /*footer*/
 footer{
+  /*position: absolute;*/
+  /*bottom: 0;*/
   text-align: center;
   padding: 10px;
   color: #000;
