@@ -20,6 +20,7 @@ public class Player {
     @Column(nullable = false)
     private String role;
 
+    @Builder.Default
     @Column(nullable = false)
     private Boolean isAlive = true;
 }

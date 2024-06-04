@@ -20,11 +20,14 @@ public class User {
     @Column(nullable = false, unique = true)
     private String username;
 
+    @Column(nullable = false, unique = true)
+    private String nickname;
+
     @Column(nullable = false)
     private String password;
 
-    @Column(nullable = false)
-    private String salt;
+    @Column(nullable = true)
+    private String profileImagePath;
 
     @OneToOne(mappedBy = "user", cascade = CascadeType.ALL)
     private Player player;

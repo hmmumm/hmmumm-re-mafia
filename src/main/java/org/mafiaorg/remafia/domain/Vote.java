@@ -30,6 +30,7 @@ public class Vote {
     @JoinColumn(name = "target_id", nullable = false)
     private Player target;
 
+    @Builder.Default
     @Column(nullable = false)
     private Timestamp voteTime = new Timestamp(System.currentTimeMillis());
 }

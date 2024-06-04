@@ -1,15 +1,15 @@
 package org.mafiaorg.remafia.dto;
 
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Data;
-import lombok.NoArgsConstructor;
-
-@Data
+import lombok.*;
+import org.springframework.web.multipart.MultipartFile;
 @Builder
+@Data
 @AllArgsConstructor
 @NoArgsConstructor
 public class UserDTO {
-    private long id;
+    private Long userId;
     private String username;
+    private String nickname;
+    private String password;
+    private String profileImagePath;
 }

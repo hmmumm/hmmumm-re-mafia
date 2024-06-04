@@ -1,16 +1,31 @@
 import {Button, Col, Container, Form, Row} from "react-bootstrap";
+import useSetting from "../hooks/useSetting";
 
-export default function Setting (){
+export default function Setting() {
+    const {user, loading, error} = useSetting();
 
-    return(
+    if (loading) {
+        return <div>Loading...</div>;
+    }
+
+    if (error) {
+        return <div>{error}</div>;
+    }
+    return (
         <Container>
-        {/*  로그인 안했으면 일단 로그인 창으로 넘기기 */}
+            {/* 로그인 안했으면 일단 로그인 창으로 넘기기 */}
             <Form>
                 <Form.Group className="mb-3" controlId="formBasicEmail">
                     <h1>설정</h1>
                     <br/>
                     <Form.Label>기본정보</Form.Label>
-                    <Form.Control type="text" placeholder="아이디" readOnly className="bg-light"/>
+                    <Form.Control
+                        type="text"
+                        placeholder="아이디"
+                        value={user.username}
+                        readOnly
+                        className="bg-light"
+                    />
                 </Form.Group>
                 <Form.Group className="mb-3" controlId="formBasicPassword">
                     <Form.Label>비밀번호</Form.Label>
@@ -27,7 +42,11 @@ export default function Setting (){
                             <Form.Control type="file" placeholder="파일 선택"/>
                         </Col>
                         <Col>
-                            <Form.Control type="text" placeholder="{NickName}"/>
+                            <Form.Control
+                                type="text"
+                                placeholder="Nickname"
+                                value={user.nickname}
+                            />
                         </Col>
                     </Row>
                 </Form.Group>

@@ -27,6 +27,7 @@ public class GamePlayer {
     @Column(nullable = false)
     private String role;
 
+    @Builder.Default
     @Column(nullable = false)
     private boolean isAlive = true;
 }
